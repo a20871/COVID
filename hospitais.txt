@@ -1,0 +1,4 @@
+1	Hospital de Barcelos		30
+2	Hospital de Braga		50
+3	Centro Saúde Barcelos		15
+4	Lar Santa Casa Barcelos		12

@@ -2,6 +2,7 @@
 #define A
 
 #define MAXUTENTES 300
+#define MAXURGENCIA 350
 
 #include<stdio.h>
 #include<time.h>
@@ -20,7 +21,7 @@ typedef struct utente {							/*Registo dos dados de cada utente*/
 } utente;
 
 typedef struct unidadesSaude {					/*Registo das unidades de saúde*/
-	char codigo[3];
+	int codigo;
 	char nome[50];
 	int maxDoentes;
 
@@ -29,19 +30,52 @@ typedef struct unidadesSaude {					/*Registo das unidades de saúde*/
 typedef struct processoClinico {				/*Registo do processo clínico do utente*/
 	int epUrg;
 	int sns;
-	char estado[2];
-	int entrada;
-	int saida;
-	int tempoInterna;
+	struct tm entrada;
+	char estado;
+	struct tm saida;
+	struct tm tempoInterna;
+	int hospital;
 
 }processoClinico;
 
-/*FUNÇÔES UTILIZADAS*/
 
+
+/*FUNÇÔES UTILIZADAS*/
+/** Utentes */
 void novoUtente();
 
-
 void acrescentaUtente();
+
+void mostraUtente(utente u[], int size);
+
+void acrescentaNovoUtente(utente u);
+
+int verificaSeExiste(int sns);
+
+/** Hospitais */
+
+int mostraHospitais();
+
+
+/** Episódios de urgência */
+
+void criaEpUrg();
+
+int leUrgencia();
+
+void novoEpUrg();
+
+/*Exercícios*/
+
+int doentesCovid(); /* Escercício 2*/
+
+int doentesNesteH(int h, struct tm dEntrada, struct tm dSaida); /*Exercício 3*/
+
+int internamentoCresc(); /*Exercício 4,5 e 6*/
+
+int ordenaVagas();	/*Exercício 7*/
+
+int insereDoente();
 
 #endif // !A
 

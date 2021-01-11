@@ -18,7 +18,16 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="funcoes.c">
+    <ClCompile Include="funcoesUtentes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="funcoesHosp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="funcoesUrgencia.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="questoes.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

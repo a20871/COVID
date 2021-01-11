@@ -139,8 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="funcoes.c" />
+    <ClCompile Include="funcoesHosp.c" />
+    <ClCompile Include="funcoesUtentes.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="funcoesUrgencia.c" />
+    <ClCompile Include="questoes.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="top.h" />
