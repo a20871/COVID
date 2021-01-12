@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="final.c" />
     <ClCompile Include="funcoesHosp.c" />
     <ClCompile Include="funcoesUtentes.c" />
     <ClCompile Include="main.c" />

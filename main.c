@@ -14,14 +14,14 @@ int main() {
 	utente utentes[MAXUTENTES];
 
 	int size = MAXUTENTES;
-	
+
 	//novoUtente();
 	//acrescentaUtente();
 
-	
 
 
-	
+
+
 
 	//mostraUtente(utentes, size);
 
@@ -39,8 +39,8 @@ int main() {
 
 	/*Questão 2-Apresenta doentes COVID*/
 	//printf("Doentes COVID: %d\n", doentesCovid());
-	
-	
+
+
 #pragma endregion Questao2
 #pragma region Questao 3
 	//
@@ -70,19 +70,24 @@ int main() {
 	//printf("Doentes que deram entrada no Hospital de Barcelos entre %d-%d-%d e %d-%d-%d é %d.\n", dEntrada.tm_mday, dEntrada.tm_mon+1, dEntrada.tm_year+1900, dSaida.tm_mday, dSaida.tm_mon+1, dSaida.tm_year+1900, nDoentes);
 #pragma endregion Questao3
 #pragma region Questao456
-	
+
 	/*Questão 4,5 e 6- Listagem de doentes, ordenada por ordem decrescente de tempo (de internamento?) desde o momento em que deu entrada até que teve alta;
 	* Cálculo da média de dias de internamento.
 	* Apresentação do doente que esteve mais tempo internado*/
-	
+
 	//internamentoCresc();
 #pragma endregion Questao456
 #pragma region Questao7
 	/*Questão 7 - Listagem de vagsa disponíveis em cada hospital por ordem crescente*/
 	//ordenaVagas();
 #pragma endregion Questao7
+#pragma region Questao8
+	//insereDoente();
 
-	insereDoente();
+#pragma endregion Questao8
 
+	//acrescentaUtente();
 
+	tabela();
 }
+

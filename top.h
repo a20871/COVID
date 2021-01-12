@@ -7,6 +7,7 @@
 #include<stdio.h>
 #include<time.h>
 #include<locale.h>
+#include <string.h>
 
 #pragma warning (disable:4996)					/*Desativar erro "security warning"*/
 
@@ -33,8 +34,10 @@ typedef struct processoClinico {				/*Registo do processo clínico do utente*/
 	struct tm entrada;
 	char estado;
 	struct tm saida;
-	struct tm tempoInterna;
+	int tempoInterna;
 	int hospital;
+	char nome[50];
+	char nomeHosp;
 
 }processoClinico;
 
@@ -76,6 +79,17 @@ int internamentoCresc(); /*Exercício 4,5 e 6*/
 int ordenaVagas();	/*Exercício 7*/
 
 int insereDoente();
+
+/*Final*/
+void tabela();
+
+int mostraUrgencia(processoClinico episodio[]);
+
+int converteTempo(processoClinico a[], int b);
+
+void encontraNome(processoClinico a[], int b);
+
+void encontraHospital(processoClinico a[], int b);
 
 #endif // !A
 

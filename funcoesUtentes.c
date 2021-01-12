@@ -51,18 +51,16 @@ void acrescentaUtente() {
 
 	utente utentes[MAXUTENTES];									
 
-	FILE* registoUtente = fopen("utentes.txt", "a");			/*Abre o ficheiro utentes.txt para adicionar registo*/
 
-	if (registoUtente == NULL) {								/*Se o ficheiro não for encontrado, mostra mensagem de erro.*/
 
-		printf("Registo não inserido!");
-		return 1;
-	}
-
-	/*Ciclo para registo individual de cada utente*/
-	while (1) {
+	/*Registo egisto individual de cada utente*/
+	
 		printf("Insira o número de SNS: ");
 		scanf("%d", &utentes->sns);
+
+		if (verificaSeExiste(utentes->sns) == 0) {
+			printf("utente já existe");
+		};
 		printf("Insira o primeiro nome: ");
 		scanf("%s", &utentes->nome);
 		printf("Insira o contacto: ");
@@ -70,14 +68,18 @@ void acrescentaUtente() {
 		printf("Insira a idade: ");
 		scanf("%d", &utentes->idade);
 
+		FILE* registoUtente = fopen("utentes.txt", "a");			/*Abre o ficheiro utentes.txt para adicionar registo*/
+
+		if (registoUtente == NULL) {								/*Se o ficheiro não for encontrado, mostra mensagem de erro.*/
+
+			printf("Registo não inserido!");
+			return 1;
+		}
+
 		fprintf(registoUtente, "%d\t%s\t\t%d\t%d\n", utentes->sns, utentes->nome, utentes->contacto, utentes->idade);
 
-		printf("Novo utente registado.\nPressione qualquer tecla para novo registo ou espaço para sair.\n");
-		char ch = getch();
-		if (ch == ' ') {
-			break;
-		}
-	}
+		printf("Novo utente registado.\n");
+	
 
 
 	fclose(registoUtente);
@@ -148,17 +150,17 @@ int verificaSeExiste(int sns) {
 
 	utente u[MAXUTENTES];
 
-	FILE* registoUtente = fopen("utentes.txt", "r");			/*Abre o ficheiro utentes.txt para adicionar registo*/
+	FILE *fp = fopen("utentes.txt", "r");			/*Abre o ficheiro utentes.txt para adicionar registo*/
 
-	if (registoUtente == NULL) {								/*Se o ficheiro não for encontrado, mostra mensagem de erro.*/
+	if (fp == NULL) {								/*Se o ficheiro não for encontrado, mostra mensagem de erro.*/
 
 		printf("Ficheiro não encontrado!");
 		return 1;
 	}
 
 	int i = 0;
-	while (!feof) {
-		fscanf(registoUtente, "%d\t%s\t\t%d\t%d\n", u[i].sns, u[i].nome, u[i].contacto, u[i].idade);
+	while (!feof(fp)) {
+		fscanf(fp, "%d\t%s\t\t%d\t%d\n", &u[i].sns, &u[i].nome, &u[i].contacto, &u[i].idade);
 		i++;
 	}
 
@@ -172,6 +174,6 @@ int verificaSeExiste(int sns) {
 		}
 	}
 
-	fclose(registoUtente);
+	fclose(fp);
 
 }
