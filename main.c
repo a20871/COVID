@@ -1,12 +1,18 @@
 /*****************************************************************//**
  * \file   main.c
- * \brief  
+ * \brief  Trabalho de PI.
  * 
- * \author martins
+ * Criação de solução para responder a problemas concretos em gestão de doentes que entram em unidades de saúde no âmbito da pandemia COVID19.
+ * 
+ * \author Sérgio Martins
+ * \e-mail mailto:a20871@alunos.ipca.pt
  * \date   January 2021
  *********************************************************************/
 #include "top.h"
 
+/// <summary>
+/// Função main para chamar e testar cada função do exercício.
+/// </summary>
 int main() {
 
 	setlocale(LC_ALL, "");
@@ -15,79 +21,72 @@ int main() {
 
 	int size = MAXUTENTES;
 
-	//novoUtente();
-	//acrescentaUtente();
-
-
-
-
-
-
+#pragma region Questao1
 	//mostraUtente(utentes, size);
+
+	//acrescentaUtente();
 
 	//mostraHospitais();
 
-
-	//criaEpUrg();
 	//leUrgencia();
-	//novoEpUrg();
-
-
+#pragma endregion Questao1
 
 #pragma region Questao2
 
-
-	/*Questão 2-Apresenta doentes COVID*/
-	//printf("Doentes COVID: %d\n", doentesCovid());
+	//
+	//printf("\nO total de doentes COVID que passaram por estas unidades de saúde é: %d\n", doentesCovid());
 
 
 #pragma endregion Questao2
-#pragma region Questao 3
-	//
-	///*Questão 3 - Números de doentes que deram entrada num determinado hospital entre determinada data*/
-	//int hosp = 1; /*Hospital de Barcelos*/
 
-	//struct tm dEntrada;
+#pragma region Questao 3
+
+	//
+	//int hosp = 1;///<Definição do código que o utilizador pretende
+
+	//struct tm dEntrada;///<Definição da data de entrada que o utilizador pretende
 	//dEntrada.tm_mday = 27;
 	//dEntrada.tm_mon = 12;
 	//dEntrada.tm_year = 2020;
 
-	///*Conversão da data*/
+	///*Conversão da data de Entrada*/
 	//dEntrada.tm_mon = (dEntrada.tm_mon - 1);
 	//dEntrada.tm_year = (dEntrada.tm_year-1900);
 
-	//struct tm dSaida;
+	//struct tm dSaida;///<Definição da data de saída que o utilizador pretende
 	//dSaida.tm_mday = 31;
 	//dSaida.tm_mon = 1;
 	//dSaida.tm_year = 2021;
 
-	///*Conversão da data*/
+	///*Conversão da data de Saida*/
 	//dSaida.tm_mon = (dSaida.tm_mon - 1);
 	//dSaida.tm_year = (dSaida.tm_year - 1900);
 
+	///*Variável que vai armazenar o número de doentes acumulados*/
 	//int nDoentes =	doentesNesteH(hosp, dEntrada, dSaida);
 
 	//printf("Doentes que deram entrada no Hospital de Barcelos entre %d-%d-%d e %d-%d-%d é %d.\n", dEntrada.tm_mday, dEntrada.tm_mon+1, dEntrada.tm_year+1900, dSaida.tm_mday, dSaida.tm_mon+1, dSaida.tm_year+1900, nDoentes);
+
 #pragma endregion Questao3
+
 #pragma region Questao456
-
-	/*Questão 4,5 e 6- Listagem de doentes, ordenada por ordem decrescente de tempo (de internamento?) desde o momento em que deu entrada até que teve alta;
-	* Cálculo da média de dias de internamento.
-	* Apresentação do doente que esteve mais tempo internado*/
-
 	//internamentoCresc();
 #pragma endregion Questao456
+
 #pragma region Questao7
-	/*Questão 7 - Listagem de vagsa disponíveis em cada hospital por ordem crescente*/
 	//ordenaVagas();
 #pragma endregion Questao7
-#pragma region Questao8
-	//insereDoente();
 
+#pragma region Questao8	
+	//mostraHospital();
 #pragma endregion Questao8
 
-	//acrescentaUtente();
+#pragma region Questao9
+	//tabela();
+#pragma endregion Questao9
 
-	tabela();
+#pragma region Questao10
+	insereDoente();
+#pragma endregion Questao10
 }
 

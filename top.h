@@ -15,50 +15,46 @@
 /// Definição dos tipos de dados associados a cada registo
 /// </summary>
 typedef struct utente {							/*Registo dos dados de cada utente*/
-	unsigned int sns;
-	char nome[20];
-	unsigned int contacto;
-	unsigned int idade;
+	unsigned int sns;///<Número de SNS
+	char nome[20];///<Nome
+	unsigned int contacto;///<Contacto
+	unsigned int idade;///<Idade
 } utente;
 
 typedef struct unidadesSaude {					/*Registo das unidades de saúde*/
-	int codigo;
-	char nome[50];
-	int maxDoentes;
-
+	int codigo;///<Código da unidade hospitalar
+	char nome[50];///<Nome da unidade hospitalar
+	int maxDoentes;///Número máximo de doentes suportado pelo serviço
 }unidadeSaude;
 
 typedef struct processoClinico {				/*Registo do processo clínico do utente*/
-	int epUrg;
-	int sns;
-	struct tm entrada;
-	char estado;
-	struct tm saida;
-	int tempoInterna;
-	int hospital;
-	char nome[50];
-	char nomeHosp;
-
+	int epUrg;///<Número de episódio de urgência
+	int sns;///<Número de SNS do doente admitido
+	struct tm entrada;///<Data de entrada
+	char estado;///<Motivo de admissao na urgência
+	struct tm saida;///<Data de saída
+	int tempoInterna;///<Tempo de internamento total do doente
+	int hospital;///<Códidgo do hospital onde o doente deu entrada
+	char nome[50];///<Nome do doente
+	char nomeHosp[50];///Nome do Hospital
 }processoClinico;
-
-
 
 /*FUNÇÔES UTILIZADAS*/
 /** Utentes */
-void novoUtente();
+
 
 void acrescentaUtente();
 
 void mostraUtente(utente u[], int size);
 
-void acrescentaNovoUtente(utente u);
 
 int verificaSeExiste(int sns);
 
 /** Hospitais */
 
-int mostraHospitais();
+void mostraHospitais();
 
+void mostraHospital();
 
 /** Episódios de urgência */
 
@@ -90,6 +86,10 @@ int converteTempo(processoClinico a[], int b);
 void encontraNome(processoClinico a[], int b);
 
 void encontraHospital(processoClinico a[], int b);
+
+int contaEpisodios(processoClinico a[], int b);
+
+void gravaBinario(processoClinico a[], int total);
 
 #endif // !A
 

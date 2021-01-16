@@ -1,15 +1,17 @@
 #include "top.h"
 
 /// <summary>
-/// Função para leitura do ficheiro de hospitais e cópia para o array hospitais
+/// Função que lê e mostra a lista de hospitais do ficheiro "hospitais.txt".
 /// </summary>
-int mostraHospitais() {
+void mostraHospitais() {
 
-	unidadeSaude hospitais[4];
+	unidadeSaude hospitais[4];///>Opção de número fixo 4, não se prevendo abertura/encerramento do novas unidades de saúde.
 
-	FILE* hospitaisBase = fopen("hospitais.txt", "r");			/*Abre o ficheiro utentes.txt para adicionar registo*/
+	/*Abre o ficheiro utentes.txt para adicionar registo*/
+	FILE* hospitaisBase = fopen("hospitais.txt", "r");			
 
-	if (hospitaisBase == NULL) {								/*Se o ficheiro não for encontrado, mostra mensagem de erro.*/
+	/*Se o ficheiro não for encontrado, mostra mensagem de erro.*/
+	if (hospitaisBase == NULL) {								
 
 		printf("Ficheiro não encontrado!");
 		return 1;
